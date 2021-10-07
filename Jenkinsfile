@@ -1,24 +1,13 @@
-@Library('javahome-libs') _
 pipeline{
     agent any
-    tools{
-        maven 'maven3'
+    triggers {
+        pollSCM '* * * * *'
     }
-    stages{
-        stage("Create Folder"){
-            steps{
-                sh "mkdir -p ${env.JOB_NAME}"
+    stages {
+        stage("poll scm") {
+            steps {
+                echo "Run code"
             }
         }
-        stage("Maven Build"){
-            steps{
-                sh 'mvn clean package'
-            }
-        }
-        stage("Deploy to Tomcat Dev"){
-            steps{
-                tomcatDeploy('tomcat-dev','ec2-user','172.31.40.104')
-            }
-        }
-    }
-}
+    }   
+}    
