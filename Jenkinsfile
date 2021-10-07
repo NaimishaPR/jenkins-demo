@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage("poll scm") {
             steps {
-                echo "Run code"
+                echo "Run code again"
             }
         }
     }   
