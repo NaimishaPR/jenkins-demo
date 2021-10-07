@@ -6,7 +6,7 @@ pipeline{
     stages {
         stage("poll scm") {
             steps {
-                echo "Run code again for webhook demo"
+                echo "Run code again for webhook demo1"
             }
         }
     }   
