@@ -1,12 +1,9 @@
 pipeline{
     agent any
-    triggers {
-        pollSCM '* * * * *'
-    }
     stages {
-        stage("poll scm") {
+        stage("Multibranch demo") {
             steps {
-                echo "Run code again for webhook demo1"
+                echo "Multibranch demo"
             }
         }
     }   
